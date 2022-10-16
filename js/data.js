@@ -1,0 +1,77 @@
+const data = [
+  {
+    qestion: "Why We Use &lt;br&gt; Element",
+    answer01: "To Make Text Bold",
+    answer02: "To Make Text Italic",
+    answer03: "To Add Breakline",
+    answer04: "To Create Horizontal Line",
+    right_answer: "To Add Breakline",
+  },
+  {
+    qestion: "Is &lt;img&gt; Element Has Attribute href",
+    answer01: "Yes",
+    answer02: "No Its For Anchor Tag &lt;a&gt;",
+    answer03: "All Elements Has This Attribute",
+    answer04: "Answer 1 And 3 Is Right",
+    right_answer: "No Its For Anchor Tag &lt;a&gt;",
+  },
+  {
+    qestion: "How Can We Make Element Text Bold",
+    answer01: "Putting It Inside &lt;b&gt; Tag",
+    answer02: "Putting It Inside &lt;strong&gt; Tag",
+    answer03: "Customizing It With Font-Weight Property In CSS",
+    answer04: "All Answers Is Right",
+    right_answer: "All Answers Is Right",
+  },
+  {
+    qestion: "What Is The Right Hierarchy For Creating Part Of Page",
+    answer01:
+      "&lt;h2&gt; Then &lt;p&gt; Then &lt;h1&gt; Then &lt;p&gt; Then &lt;h3&gt; Then &lt;p&gt; Then &lt;img&gt;",
+    answer02:
+      "&lt;h1&gt; Then &lt;p&gt; Then &lt;h3&gt; Then &lt;p&gt; Then &lt;h2&gt; Then &lt;p&gt; Then &lt;img&gt;",
+    answer03:
+      "&lt;h2&gt; Then &lt;p&gt; Then &lt;h3&gt; Then &lt;p&gt; Then &lt;h1&gt; Then &lt;p&gt; Then &lt;img&gt;",
+    answer04: "All Solutions Is Wrong",
+    right_answer: "All Solutions Is Wrong",
+  },
+  {
+    qestion: "How Can We Include External Page Inside Our HTML Page",
+    answer01: "By Using Include in HTML",
+    answer02: "By Using Load In HTML",
+    answer03: "By Using iFrame Tag",
+    answer04: "All Solutions Is Wrong",
+    right_answer: "By Using iFrame Tag",
+  },
+  {
+    qestion: "What Is The Tag That Not Exists in HTML",
+    answer01: "&lt;object&gt;",
+    answer02: "&lt;basefont&gt;",
+    answer03: "&lt;abbr&gt;",
+    answer04: "All Tags Is Exists in HTML",
+    right_answer: "All Tags Is Exists in HTML",
+  },
+  {
+    qestion: "How We Specify Document Type Of HTML5 Page",
+    answer01: "&lt;DOCTYPE html&gt;",
+    answer02: "&lt;DOCTYPE html5&gt;",
+    answer03: "&lt;!DOCTYPE html5&gt;",
+    answer04: "&lt;!DOCTYPE html&gt;",
+    right_answer: "&lt;!DOCTYPE html&gt;",
+  },
+  {
+    qestion: "What Is The Element Thats Not Exists in HTML5 Semantics",
+    answer01: "&lt;article&gt;",
+    answer02: "&lt;section&gt;",
+    answer03: "&lt;blockquote&gt;",
+    answer04: "&lt;aside&gt;",
+    right_answer: "&lt;blockquote&gt;",
+  },
+  {
+    qestion: "In HTML Can We Use This Way To Add Attributes",
+    answer01: "&lt;div class='class-name'&gt;",
+    answer02: "&lt;div class=class-name&gt;",
+    answer03: '&lt;div class="class-name"&gt;',
+    answer04: "All Is Right",
+    right_answer: "All Is Right",
+  },
+];
