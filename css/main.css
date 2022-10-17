@@ -8,19 +8,30 @@
 }
 
 :root {
-  --box-color: rgb(215, 209, 209);
+  --box-color: #c427fb;
+}
+
+#show {
+  display: block;
 }
 
 body {
-  background-color: rgb(240, 240, 240);
+  /* padding: 20px 0; */
+  background: rgb(59, 38, 123);
+  background: linear-gradient(90deg, rgba(59, 38, 123, 1) 70%, rgba(46, 35, 90, 1) 100%, rgba(28, 27, 51, 1) 100%);
 }
 
-.qestion {
-  background-color: #f8f8f8;
+body>div {
+  color: white;
+  background-color: #1c1b33;
   max-width: 700px;
   margin: auto;
   border-radius: 10px;
   box-shadow: 0 0 5px var(--box-color);
+}
+
+.qestion {
+  display: none;
   position: relative;
 }
 
@@ -28,7 +39,7 @@ body {
   padding: 15px;
   display: flex;
   flex-direction: row;
-  background-color: white;
+  background-color: #1c1b33;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   font-size: 18px;
@@ -41,6 +52,7 @@ body {
 }
 
 .qestion h1 {
+  background-color: #32314d;
   font-size: 24px;
   font-weight: 500;
   padding: 15px;
@@ -50,7 +62,7 @@ body {
 
 .qestion .area-answer form {
   padding: 15px;
-  background-color: white;
+  background-color: #1c1b33;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 
@@ -72,11 +84,11 @@ form input {
 }
 
 form input:checked+label {
-  color: #0075ff;
+  color: #338aee;
   font-weight: 500;
 }
 
-button {
+.qestion button {
   position: absolute;
   right: 0;
   background-color: #0075ff;
@@ -84,23 +96,20 @@ button {
   padding: 15px;
   border: none;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 1em;
   margin-top: 15px;
   cursor: pointer;
 }
 
 .end {
-  border-radius: 10px;
-  margin: auto;
-  width: 500px;
   text-align: center;
-  padding: 100px;
+  padding: 100px 0;
   box-shadow: 0 0 5px var(--box-color);
 }
 
 .end h2 {
   font-size: 25px;
-  color: #088178;
+  color: white;
   padding-bottom: 15px;
 }
 
@@ -126,6 +135,10 @@ button {
     font-size: 20px;
     line-height: 35px;
   }
+
+  .qestion button {
+    margin-right: 5px;
+  }
 }
 
 @media (max-width:500px) {
@@ -137,4 +150,30 @@ button {
   form label {
     font-size: 14px;
   }
+}
+
+/* Start div section */
+.start-div {
+  display: none;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.start-div h2 {
+  font-weight: 400;
+
+}
+
+.start-div button {
+  background-color: #0075ff;
+  color: white;
+  padding: 12px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-top: 15px;
+  cursor: pointer;
 }
