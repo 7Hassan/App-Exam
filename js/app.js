@@ -49,11 +49,11 @@ function end() {
 
 // on click on buttom
 function clickButtom(objectData, qestionsNumber) {
-  if (counter === qestionsNumber - 1) {
+  counter++;
+  if (counter == qestionsNumber) {
     end();
   } else {
     getAnswer(objectData);
-    counter++;
     setData(objectData, qestionsNumber);
   }
 }
@@ -80,7 +80,7 @@ function timer(minutes, secounds) {
       minutes--;
       secounds = 59;
     }
-    if ((minutes == 0 && secounds < 0) || counter == data.length - 1) {
+    if ((minutes == 0 && secounds < 0) || counter == data.length) {
       clearInterval(countDownTimer);
       return end();
     }

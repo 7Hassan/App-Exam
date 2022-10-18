@@ -129,6 +129,7 @@ form input:checked+label {
   cursor: pointer;
   position: absolute;
   right: 0;
+  z-index: 10;
 }
 
 body.dark .end {
@@ -248,6 +249,8 @@ body.dark #dark-div {
   align-items: center;
   cursor: pointer;
   justify-content: space-between;
+  position: relative;
+  z-index: 15;
 }
 
 #dark-div img {
