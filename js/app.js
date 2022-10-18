@@ -24,6 +24,7 @@ function setData(objectData, qestionsNumber) {
 
 // end the exam
 function end() {
+  document.querySelector(".holder").remove();
   divQestion.remove();
   let divEnd = document.createElement("div");
   divEnd.className = "end";
@@ -40,7 +41,7 @@ function end() {
     divEnd.appendChild(p);
   } else {
     let h3 = document.createElement("h3");
-    h3.textContent = "Sorry, try again.";
+    h3.textContent = "Sorry, you filled.";
     divEnd.appendChild(h3);
   }
   document.body.appendChild(divEnd);
@@ -90,8 +91,31 @@ function hiddenEle(ele) {
   ele.id = "";
 }
 function readyButton(ele) {
+  timer(2, 0);
   hiddenEle(ele.parentElement);
   divQestion.id = "show";
-  timer(2, 0);
   setData(data, data.length);
+}
+
+function dark(ele) {
+  let svg = document.querySelector("svg path");
+  console.log(svg.attributes[1].textContent);
+  // Dark
+  if (!ele.children[0].classList.contains("dark-mood")) {
+    ele.children[0].classList.remove("rotate");
+    ele.children[0].classList.add("dark-mood");
+    ele.children[1].classList.add("rotate");
+    ele.children[1].classList.remove("rotate-reverse");
+    document.body.classList.add("dark");
+    svg.attributes[0].textContent = "#1c1b33";
+    svg.attributes[1].textContent = ".5";
+  }
+  // shine
+  else {
+    ele.children[0].classList.replace("dark-mood", "rotate");
+    ele.children[1].classList.replace("rotate", "rotate-reverse");
+    document.body.classList.remove("dark");
+    svg.attributes[0].textContent = "#0075ff";
+    svg.attributes[1].textContent = "1";
+  }
 }

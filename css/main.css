@@ -15,19 +15,33 @@
   display: block;
 }
 
+/* dark mood */
 body {
-  /* padding: 20px 0; */
+  background-color: #eee;
+}
+
+body.dark {
   background: rgb(59, 38, 123);
   background: linear-gradient(90deg, rgba(59, 38, 123, 1) 70%, rgba(46, 35, 90, 1) 100%, rgba(28, 27, 51, 1) 100%);
 }
 
-body>div {
-  color: white;
+body.dark .start-div,
+body.dark .qestion,
+body.dark .end {
   background-color: #1c1b33;
+  color: white;
+  box-shadow: 0 0 5px var(--box-color);
+}
+
+.start-div,
+.qestion,
+.end {
+  color: black;
+  background-color: white;
   max-width: 700px;
   margin: auto;
   border-radius: 10px;
-  box-shadow: 0 0 5px var(--box-color);
+  box-shadow: 20px 20px 30px rgb(0 0 0 / 9%);
 }
 
 .qestion {
@@ -35,11 +49,15 @@ body>div {
   position: relative;
 }
 
+body.dark .counter {
+  background-color: #1c1b33;
+}
+
 .counter {
   padding: 15px;
   display: flex;
   flex-direction: row;
-  background-color: #1c1b33;
+  background-color: white;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   font-size: 18px;
@@ -51,8 +69,12 @@ body>div {
   right: 15px;
 }
 
-.qestion h1 {
+body.dark h1 {
   background-color: #32314d;
+}
+
+.qestion h1 {
+  background-color: #eee;
   font-size: 24px;
   font-weight: 500;
   padding: 15px;
@@ -60,9 +82,13 @@ body>div {
   line-height: 35px;
 }
 
+body.dark .qestion .area-answer form {
+  background-color: #1c1b33;
+}
+
 .qestion .area-answer form {
   padding: 15px;
-  background-color: #1c1b33;
+  background-color: white;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 
@@ -83,14 +109,16 @@ form input {
   cursor: pointer;
 }
 
+body.dark form input:checked+label {
+  color: #c427fb;
+}
+
 form input:checked+label {
-  color: #338aee;
+  color: #0075ff;
   font-weight: 500;
 }
 
 .qestion button {
-  position: absolute;
-  right: 0;
   background-color: #0075ff;
   color: white;
   padding: 15px;
@@ -99,17 +127,28 @@ form input:checked+label {
   font-size: 1em;
   margin-top: 15px;
   cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+body.dark .end {
+  box-shadow: 0 0 5px var(--box-color);
 }
 
 .end {
   text-align: center;
   padding: 100px 0;
-  box-shadow: 0 0 5px var(--box-color);
+  box-shadow: 20px 20px 30px rgb(0 0 0 / 9%);
+}
+
+body.dark .end h2 {
+  color: white;
+
 }
 
 .end h2 {
   font-size: 25px;
-  color: white;
+  color: rgb(90, 90, 90);
   padding-bottom: 15px;
 }
 
@@ -135,10 +174,6 @@ form input:checked+label {
     font-size: 20px;
     line-height: 35px;
   }
-
-  .qestion button {
-    margin-right: 5px;
-  }
 }
 
 @media (max-width:500px) {
@@ -161,8 +196,13 @@ form input:checked+label {
   z-index: 2;
 }
 
+
+
 .start-div h2 {
-  font-weight: 400;
+  background-image: linear-gradient(90deg, #c427fb, red);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 
 }
 
@@ -176,4 +216,88 @@ form input:checked+label {
   font-size: 1em;
   margin-top: 15px;
   cursor: pointer;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+}
+
+
+/* Start dark mood button */
+
+.holder {
+  max-width: 700px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+body.dark #dark-div {
+  box-shadow: 0 0 5px var(--box-color);
+
+}
+
+#dark-div {
+  border-radius: 10px;
+  box-shadow: 20px 20px 30px rgb(0 0 0 / 9%);
+  border: 1px solid rgb(189, 189, 189);
+  width: 55px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+#dark-div img {
+  width: 20px;
+}
+
+.moon {
+  transition: all 1s;
+  margin-right: 10px;
+  opacity: 0;
+}
+
+.sun {
+  transition: all 1s;
+  opacity: 1;
+}
+
+
+.rotate {
+  animation: spin 2s ease-in-out none;
+  opacity: 1;
+}
+
+.rotate-reverse {
+  animation: spin-reverse 2s ease-out none;
+  opacity: 0;
+}
+
+.dark-mood {
+  animation: spin-reverse 2s linear none;
+  margin-left: 10px;
+  opacity: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
 }
