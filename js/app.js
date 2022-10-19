@@ -49,21 +49,22 @@ function end() {
 
 // on click on buttom
 function clickButtom(objectData, qestionsNumber) {
+  getAnswer(objectData);
   counter++;
   if (counter == qestionsNumber) {
     end();
   } else {
-    getAnswer(objectData);
     setData(objectData, qestionsNumber);
   }
 }
 // get final answer
 function getAnswer(objectData) {
   for (var i = 0; i < answers.length; i++) {
-    if (inputs[i].checked === true) {
-      if (inputs[i].dataset.answer === objectData[counter].right_answer) {
-        correctAnswer++;
-      }
+    if (
+      inputs[i].checked === true &&
+      inputs[i].dataset.answer === objectData[counter].right_answer
+    ) {
+      correctAnswer++;
     }
   }
 }
@@ -80,9 +81,12 @@ function timer(minutes, secounds) {
       minutes--;
       secounds = 59;
     }
-    if ((minutes == 0 && secounds < 0) || counter == data.length) {
+    if (minutes == 0 && secounds < 0) {
       clearInterval(countDownTimer);
       return end();
+    }
+    if (counter == data.length) {
+      clearInterval(countDownTimer);
     }
   }, 1000);
 }
@@ -99,7 +103,6 @@ function readyButton(ele) {
 
 function dark(ele) {
   let svg = document.querySelector("svg path");
-  console.log(svg.attributes[1].textContent);
   // Dark
   if (!ele.children[0].classList.contains("dark-mood")) {
     ele.children[0].classList.remove("rotate");
